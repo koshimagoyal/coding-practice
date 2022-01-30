@@ -1,6 +1,7 @@
 package practise;
 import java.util.*;
 
+//bulb are toggled for perfect squares only
 public class BenjaminBulbs {
 
 	public static void main(String[] args) {
