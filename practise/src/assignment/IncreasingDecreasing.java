@@ -8,33 +8,22 @@ public class IncreasingDecreasing {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		int t = sc.nextInt();
-		boolean series=false,inc=false,dec=false;
 		int prev = 0;
-		while(t>0) {
+		boolean series = true, inc = false;
+		while (t > 0) {
 			int n = sc.nextInt();
-			if(!inc&&!dec) {
-				if (prev == 0) {
-					prev = n;
-				} else if (prev != n && prev < n) {
-					prev = n;
-					inc = true;
-					dec = false;
-				} else if (prev != n && prev > n) {
-					prev = n;
-					inc = false;
-					dec = true;
-				}
-			} else {
-				if(inc&&prev<n) {
-					series = true;
-				} else if(dec&&prev>n) {
-					series = true;
-				} else {
-					series = false;
-					break;
-				}
-				prev = n;
+			if (prev == 0) {
+				// do nothing
+			} else if (inc && prev > n) {
+				series = false;
+				break;
+			} else if (prev == n) {
+				series = false;
+				break;
+			} else if (prev < n) {
+				inc = true;
 			}
+			prev = n;
 			t--;
 		}
 		System.out.println(series);

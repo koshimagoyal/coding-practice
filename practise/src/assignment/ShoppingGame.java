@@ -15,9 +15,9 @@ public class ShoppingGame {
 			while(sumA<=aPur&&sumB<=hPur) {
 				count++;
 				if(count%2==0) {
-					sumB++;
+					sumB+=count;
 				} else {
-					sumA++;
+					sumA+=count;
 				}
 			}
 			if(sumA>aPur) {
